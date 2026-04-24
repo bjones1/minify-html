@@ -1,8 +1,8 @@
+use crate::Cfg;
 use crate::err::ProcessingResult;
 use crate::proc::MatchAction::*;
 use crate::proc::MatchMode::*;
 use crate::proc::Processor;
-use crate::Cfg;
 use aho_corasick::AhoCorasick;
 use aho_corasick::AhoCorasickBuilder;
 use lightningcss::stylesheet::MinifyOptions;

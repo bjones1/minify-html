@@ -1,7 +1,7 @@
 use crate::ast::NodeData;
 use crate::ast::ScriptOrStyleLang;
-use crate::parse::content::ParsedContent;
 use crate::parse::Code;
+use crate::parse::content::ParsedContent;
 use aho_corasick::AhoCorasick;
 use aho_corasick::AhoCorasickBuilder;
 use once_cell::sync::Lazy;

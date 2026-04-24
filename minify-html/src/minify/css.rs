@@ -28,11 +28,11 @@ pub fn minify_css(cfg: &Cfg, out: &mut Vec<u8>, code: &[u8]) {
       // TODO Collect error as warning.
       Err(_err) => None,
     };
-    if let Some(min) = result {
-      if min.len() < code.len() {
-        out.extend_from_slice(min.as_bytes());
-        return;
-      };
+    if let Some(min) = result
+      && min.len() < code.len()
+    {
+      out.extend_from_slice(min.as_bytes());
+      return;
     };
   }
   out.extend_from_slice(trimmed(code));

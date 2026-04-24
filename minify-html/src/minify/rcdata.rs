@@ -1,8 +1,8 @@
+use crate::Cfg;
 use crate::ast::RcdataContentType;
 use crate::entity::encode::encode_entities;
 use crate::tag::TAG_TEXTAREA_END;
 use crate::tag::TAG_TITLE_END;
-use crate::Cfg;
 
 pub fn minify_rcdata(cfg: &Cfg, out: &mut Vec<u8>, typ: RcdataContentType, text: &[u8]) {
   // Encode entities, since they're still decoded by the browser.

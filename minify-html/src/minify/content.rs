@@ -9,15 +9,15 @@ use crate::minify::css::minify_css;
 use crate::minify::doctype::minify_doctype;
 use crate::minify::element::minify_element;
 use crate::minify::instruction::minify_instruction;
-use crate::minify::js::minify_js;
 use crate::minify::js::TopLevelMode;
+use crate::minify::js::minify_js;
 use aho_corasick::AhoCorasickBuilder;
 use aho_corasick::MatchKind;
-use minify_html_common::pattern::Replacer;
 use minify_html_common::r#gen::codepoints::TAG_NAME_CHAR;
+use minify_html_common::pattern::Replacer;
 use minify_html_common::spec::tag::ns::Namespace;
-use minify_html_common::spec::tag::whitespace::get_whitespace_minification_for_tag;
 use minify_html_common::spec::tag::whitespace::WhitespaceMinification;
+use minify_html_common::spec::tag::whitespace::get_whitespace_minification_for_tag;
 use minify_html_common::whitespace::collapse_whitespace;
 use minify_html_common::whitespace::is_all_whitespace;
 use minify_html_common::whitespace::left_trim;
@@ -80,15 +80,14 @@ pub fn minify_content(
     let n = &mut next_nodes[0];
     match n {
       NodeData::Element { name, .. } => {
-        if index_of_last_nonempty_text_or_elem > -1 {
-          if let NodeData::Element {
+        if index_of_last_nonempty_text_or_elem > -1
+          && let NodeData::Element {
             next_sibling_element_name,
             ..
           } = &mut previous_nodes[index_of_last_nonempty_text_or_elem as usize]
-          {
-            debug_assert!(next_sibling_element_name.is_empty());
-            next_sibling_element_name.extend_from_slice(name);
-          };
+        {
+          debug_assert!(next_sibling_element_name.is_empty());
+          next_sibling_element_name.extend_from_slice(name);
         };
         found_first_text_or_elem = true;
         index_of_last_nonempty_text_or_elem = i as isize;
@@ -119,10 +118,11 @@ pub fn minify_content(
       _ => {}
     };
   }
-  if trim && index_of_last_text_or_elem > -1 {
-    if let NodeData::Text { value } = nodes.get_mut(index_of_last_text_or_elem as usize).unwrap() {
-      right_trim(value);
-    };
+  if trim
+    && index_of_last_text_or_elem > -1
+    && let NodeData::Text { value } = nodes.get_mut(index_of_last_text_or_elem as usize).unwrap()
+  {
+    right_trim(value);
   }
 
   for (i, c) in nodes.into_iter().enumerate() {

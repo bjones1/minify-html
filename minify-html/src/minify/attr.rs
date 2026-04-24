@@ -1,14 +1,14 @@
-use crate::entity::encode::encode_entities;
 use crate::Cfg;
+use crate::entity::encode::encode_entities;
 use aho_corasick::AhoCorasickBuilder;
 use aho_corasick::MatchKind;
 use lightningcss::stylesheet::MinifyOptions;
 use lightningcss::stylesheet::ParserOptions;
 use lightningcss::stylesheet::PrinterOptions;
 use lightningcss::stylesheet::StyleAttribute;
-use minify_html_common::pattern::Replacer;
 use minify_html_common::r#gen::attrs::ATTRS;
 use minify_html_common::r#gen::codepoints::DIGIT;
+use minify_html_common::pattern::Replacer;
 use minify_html_common::spec::script::JAVASCRIPT_MIME_TYPES;
 use minify_html_common::spec::tag::ns::Namespace;
 use minify_html_common::whitespace::collapse_whitespace;

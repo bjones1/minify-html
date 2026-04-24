@@ -1,5 +1,5 @@
-use minify_html::minify;
 use minify_html::Cfg;
+use minify_html::minify;
 use std::env;
 use std::fs;
 use std::io::stdout;

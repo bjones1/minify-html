@@ -3,10 +3,10 @@
 use crate::ast::c14n::c14n_serialise_ast;
 pub use crate::cfg::Cfg;
 use crate::minify::content::minify_content;
-use crate::parse::content::parse_content;
 use crate::parse::Code;
-use minify_html_common::spec::tag::ns::Namespace;
+use crate::parse::content::parse_content;
 use minify_html_common::spec::tag::EMPTY_SLICE;
+use minify_html_common::spec::tag::ns::Namespace;
 use parse::ParseOpts;
 use std::io::Write;
 

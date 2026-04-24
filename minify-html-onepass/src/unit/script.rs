@@ -44,14 +44,16 @@ pub fn process_script(
   let src = proc.m(WhileNotSeq(&SCRIPT_END), Discard);
   // `process_tag` will require closing tag.
 
-  if cfg.minify_js && mode.is_some() {
+  if cfg.minify_js
+    && let Some(mode) = mode
+  {
     let code = &proc[src];
     // Try to convert bytes to UTF-8 string for parsing
     if let Ok(source_text) = std::str::from_utf8(code) {
       let allocator = Allocator::default();
 
       // Determine source type based on mode
-      let source_type = match mode.unwrap() {
+      let source_type = match mode {
         TopLevelMode::Module => SourceType::mjs(),
         TopLevelMode::Global => SourceType::default(),
       };

@@ -1,5 +1,5 @@
-use crate::proc::range::ProcessorRange;
 use crate::proc::Processor;
+use crate::proc::range::ProcessorRange;
 
 #[derive(Copy, Clone)]
 pub struct WriteCheckpoint {

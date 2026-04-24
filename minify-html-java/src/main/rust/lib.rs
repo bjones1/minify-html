@@ -1,10 +1,10 @@
+use jni::JNIEnv;
 use jni::objects::JClass;
 use jni::objects::JObject;
 use jni::objects::JString;
 use jni::sys::jstring;
-use jni::JNIEnv;
-use minify_html::minify as minify_html_native;
 use minify_html::Cfg;
+use minify_html::minify as minify_html_native;
 use std::str::from_utf8;
 
 fn build_cfg(env: &mut JNIEnv, obj: &JObject) -> Cfg {

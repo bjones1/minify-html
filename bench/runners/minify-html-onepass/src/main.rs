@@ -1,5 +1,5 @@
-use minify_html_onepass::in_place;
 use minify_html_onepass::Cfg;
+use minify_html_onepass::in_place;
 use std::env;
 use std::fs;
 use std::io::stdout;

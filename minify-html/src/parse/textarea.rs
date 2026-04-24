@@ -1,8 +1,8 @@
 use crate::ast::NodeData;
 use crate::ast::RcdataContentType;
 use crate::entity::decode::decode_entities;
-use crate::parse::content::ParsedContent;
 use crate::parse::Code;
+use crate::parse::content::ParsedContent;
 use crate::tag::TAG_TEXTAREA_END;
 
 pub fn parse_textarea_content(code: &mut Code) -> ParsedContent {

@@ -1,7 +1,7 @@
 use minify_html::canonicalise;
+use std::io::Read;
 use std::io::stdin;
 use std::io::stdout;
-use std::io::Read;
 
 fn main() {
   let mut src = Vec::new();

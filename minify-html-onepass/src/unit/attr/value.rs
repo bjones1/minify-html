@@ -1,10 +1,10 @@
 use crate::err::ProcessingResult;
-use crate::proc::checkpoint::WriteCheckpoint;
-use crate::proc::entity::maybe_normalise_entity;
-use crate::proc::range::ProcessorRange;
 use crate::proc::MatchAction::*;
 use crate::proc::MatchMode::*;
 use crate::proc::Processor;
+use crate::proc::checkpoint::WriteCheckpoint;
+use crate::proc::entity::maybe_normalise_entity;
+use crate::proc::range::ProcessorRange;
 use ahash::AHashMap;
 use minify_html_common::r#gen::codepoints::ATTR_QUOTE;
 use minify_html_common::r#gen::codepoints::DIGIT;

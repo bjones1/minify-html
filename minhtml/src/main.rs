@@ -1,12 +1,12 @@
-use minify_html::minify;
 use minify_html::Cfg;
+use minify_html::minify;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use std::fs::File;
-use std::io::stdin;
-use std::io::stdout;
 use std::io::Read;
 use std::io::Write;
+use std::io::stdin;
+use std::io::stdout;
 use std::process::exit;
 use std::sync::Arc;
 use structopt::StructOpt;

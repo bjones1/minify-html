@@ -1,5 +1,6 @@
 use crate::ast::NodeData;
 use crate::entity::decode::decode_entities;
+use crate::parse::Code;
 use crate::parse::bang::parse_bang;
 use crate::parse::comment::parse_comment;
 use crate::parse::content::ContentType::*;
@@ -8,7 +9,6 @@ use crate::parse::element::parse_element;
 use crate::parse::element::parse_tag;
 use crate::parse::element::peek_tag_name;
 use crate::parse::instruction::parse_instruction;
-use crate::parse::Code;
 use aho_corasick::AhoCorasick;
 use aho_corasick::AhoCorasickBuilder;
 use aho_corasick::MatchKind;

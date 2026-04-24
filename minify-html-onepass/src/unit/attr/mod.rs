@@ -1,13 +1,13 @@
 use crate::err::ProcessingResult;
-use crate::proc::checkpoint::WriteCheckpoint;
-use crate::proc::range::ProcessorRange;
 use crate::proc::MatchAction::*;
 use crate::proc::MatchMode::*;
 use crate::proc::Processor;
-use crate::unit::attr::value::process_attr_value;
-use crate::unit::attr::value::skip_attr_value;
+use crate::proc::checkpoint::WriteCheckpoint;
+use crate::proc::range::ProcessorRange;
 use crate::unit::attr::value::DelimiterType;
 use crate::unit::attr::value::ProcessedAttrValue;
+use crate::unit::attr::value::process_attr_value;
+use crate::unit::attr::value::skip_attr_value;
 use minify_html_common::r#gen::attrs::ATTRS;
 use minify_html_common::r#gen::codepoints::WHATWG_ATTR_NAME_CHAR;
 use minify_html_common::r#gen::codepoints::WHITESPACE;

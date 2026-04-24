@@ -1,8 +1,8 @@
 pub use crate::cfg::Cfg;
-use crate::err::debug_repr;
 pub use crate::err::Error;
 pub use crate::err::ErrorType;
 pub use crate::err::FriendlyError;
+use crate::err::debug_repr;
 use crate::proc::Processor;
 use crate::unit::content::process_content;
 use minify_html_common::spec::tag::ns::Namespace;

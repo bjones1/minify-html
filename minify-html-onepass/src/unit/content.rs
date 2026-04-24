@@ -1,23 +1,23 @@
 use crate::cfg::Cfg;
 use crate::err::ProcessingResult;
-use crate::proc::checkpoint::ReadCheckpoint;
-use crate::proc::entity::maybe_normalise_entity;
-use crate::proc::range::ProcessorRange;
 use crate::proc::MatchAction::*;
 use crate::proc::MatchMode::*;
 use crate::proc::Processor;
+use crate::proc::checkpoint::ReadCheckpoint;
+use crate::proc::entity::maybe_normalise_entity;
+use crate::proc::range::ProcessorRange;
 use crate::unit::bang::process_bang;
 use crate::unit::comment::process_comment;
 use crate::unit::instruction::process_instruction;
-use crate::unit::tag::process_tag;
 use crate::unit::tag::MaybeClosingTag;
+use crate::unit::tag::process_tag;
 use minify_html_common::r#gen::codepoints::TAG_NAME_CHAR;
 use minify_html_common::r#gen::codepoints::WHITESPACE;
 use minify_html_common::spec::tag::ns::Namespace;
 use minify_html_common::spec::tag::omission::can_omit_as_before;
 use minify_html_common::spec::tag::omission::can_omit_as_last_node;
-use minify_html_common::spec::tag::whitespace::get_whitespace_minification_for_tag;
 use minify_html_common::spec::tag::whitespace::WhitespaceMinification;
+use minify_html_common::spec::tag::whitespace::get_whitespace_minification_for_tag;
 
 #[derive(Copy, Clone, PartialEq, Eq)]
 enum ContentType {

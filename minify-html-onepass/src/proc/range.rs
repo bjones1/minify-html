@@ -1,6 +1,6 @@
+use crate::ErrorType;
 use crate::err::ProcessingResult;
 use crate::proc::Processor;
-use crate::ErrorType;
 
 #[derive(Copy, Clone)]
 pub struct ProcessorRange {

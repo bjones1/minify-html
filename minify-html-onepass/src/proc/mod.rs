@@ -1,10 +1,10 @@
-use crate::err::debug_repr;
 use crate::err::Error;
 use crate::err::ErrorType;
 use crate::err::ProcessingResult;
-use crate::proc::range::ProcessorRange;
+use crate::err::debug_repr;
 use crate::proc::MatchAction::*;
 use crate::proc::MatchMode::*;
+use crate::proc::range::ProcessorRange;
 use aho_corasick::AhoCorasick;
 use core::fmt;
 use memchr::memchr;

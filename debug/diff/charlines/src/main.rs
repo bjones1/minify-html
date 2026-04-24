@@ -1,7 +1,7 @@
-use std::io::stdin;
-use std::io::stdout;
 use std::io::Read;
 use std::io::Write;
+use std::io::stdin;
+use std::io::stdout;
 
 fn main() {
   let mut src = Vec::new();
