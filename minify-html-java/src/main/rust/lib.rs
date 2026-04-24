@@ -5,6 +5,7 @@ use jni::objects::JString;
 use jni::sys::jstring;
 use minify_html::Cfg;
 use minify_html::minify as minify_html_native;
+use std::collections::HashSet;
 use std::str::from_utf8;
 
 fn build_cfg(env: &mut JNIEnv, obj: &JObject) -> Cfg {
@@ -26,6 +27,7 @@ fn build_cfg(env: &mut JNIEnv, obj: &JObject) -> Cfg {
     preserve_chevron_percent_template_syntax: env.get_field(obj, "preserve_chevron_percent_template_syntax", "Z").unwrap().z().unwrap(),
     remove_bangs: env.get_field(obj, "remove_bangs", "Z").unwrap().z().unwrap(),
     remove_processing_instructions: env.get_field(obj, "remove_processing_instructions", "Z").unwrap().z().unwrap(),
+    override_whitespace: HashSet::new()
   };
   cfg
 }

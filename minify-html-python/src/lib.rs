@@ -2,6 +2,7 @@ use ::minify_html::Cfg;
 use ::minify_html::minify as minify_html_native;
 use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
+use std::collections::HashSet;
 use std::string::String;
 
 #[allow(clippy::too_many_arguments)]
@@ -64,6 +65,7 @@ fn minify(
       preserve_chevron_percent_template_syntax,
       remove_bangs,
       remove_processing_instructions,
+      override_whitespace: HashSet::new(),
     },
   );
   String::from_utf8(out_code).unwrap()

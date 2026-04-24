@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 /// Configuration settings that can be adjusted and passed to a minification function to change the
 /// minification approach.
 #[derive(Clone, Default)]
@@ -32,6 +34,8 @@ pub struct Cfg {
   pub remove_bangs: bool,
   /// Remove all processing instructions.
   pub remove_processing_instructions: bool,
+  /// The whitespace in these tags will not be changed.
+  pub override_whitespace: HashSet<Vec<u8>>,
 }
 
 impl Cfg {

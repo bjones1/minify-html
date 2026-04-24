@@ -1,5 +1,6 @@
 use neon::prelude::*;
 use neon::types::buffer::TypedArray;
+use std::collections::HashSet;
 
 macro_rules! get_bool {
   ($cx:expr_2021, $opt:expr_2021, $name:literal) => {
@@ -34,6 +35,7 @@ fn minify(mut cx: FunctionContext) -> JsResult<JsBuffer> {
     preserve_chevron_percent_template_syntax: get_bool!(cx, opt, "preserve_chevron_percent_template_syntax"),
     remove_bangs: get_bool!(cx, opt, "remove_bangs"),
     remove_processing_instructions: get_bool!(cx, opt, "remove_processing_instructions"),
+    override_whitespace: HashSet::new()
   };
   let out = minify_html::minify(src.as_slice(&cx), &cfg);
   JsBuffer::from_slice(&mut cx, &out)

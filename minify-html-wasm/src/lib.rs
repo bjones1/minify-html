@@ -37,6 +37,7 @@ pub fn minify(code: &[u8], cfg: &JsValue) -> Vec<u8> {
     preserve_chevron_percent_template_syntax: get_prop!(cfg, "preserve_chevron_percent_template_syntax"),
     remove_bangs: get_prop!(cfg, "remove_bangs"),
     remove_processing_instructions: get_prop!(cfg, "remove_processing_instructions"),
+    override_whitespace: Reflect::get(cfg, &JsValue::from_str("override_whitespace")).ok().and_then(|p| p.as_string()).unwrap_or_default().as_bytes().split(|b| b == &b',').map(|slice| slice.to_vec()).collect()
   };
   minify_html::minify(code, &cfg)
 }

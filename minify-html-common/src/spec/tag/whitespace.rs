@@ -32,7 +32,7 @@ static LAYOUT: &WhitespaceMinification = &WhitespaceMinification {
   trim: true,
 };
 
-static WHITESPACE_SENSITIVE: &WhitespaceMinification = &WhitespaceMinification {
+pub static WHITESPACE_SENSITIVE: &WhitespaceMinification = &WhitespaceMinification {
   collapse: false,
   destroy_whole: false,
   trim: false,

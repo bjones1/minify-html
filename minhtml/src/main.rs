@@ -90,6 +90,9 @@ struct Cli {
   /// Remove all processing instructions.
   #[structopt(long)]
   remove_processing_instructions: bool,
+
+  #[structopt(long)]
+  override_whitespace: Vec<u8>,
 }
 
 macro_rules! io_expect {
@@ -128,6 +131,7 @@ fn main() {
     preserve_chevron_percent_template_syntax: args.preserve_chevron_percent_template_syntax,
     remove_bangs: args.remove_bangs,
     remove_processing_instructions: args.remove_processing_instructions,
+    override_whitespace: args.override_whitespace.split(|b| b == &b',').map(|slice| slice.to_vec()).collect()
   });
 
   if args.inputs.len() <= 1 {
