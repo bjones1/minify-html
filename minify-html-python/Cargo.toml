@@ -15,7 +15,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 minify-html = { path = "../minify-html" }
-pyo3 = { "version" = "0.27", features = [
+pyo3 = { "version" = "0.28", features = [
     "extension-module",
     "generate-import-lib",
 ] }
