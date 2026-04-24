@@ -2,7 +2,7 @@
 publish = false
 name = "c14n"
 version = "0.0.1"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 minify-html = { path = "../../../minify-html" }

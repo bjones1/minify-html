@@ -2,12 +2,12 @@ use aho_corasick::AhoCorasick;
 use aho_corasick::AhoCorasickBuilder;
 use aho_corasick::MatchKind;
 use memchr::memchr;
-use minify_html_common::gen::codepoints::ALPHANUMERIC_OR_EQUALS;
-use minify_html_common::gen::entities::EntityType;
-use minify_html_common::gen::entities::ENTITY;
-use minify_html_common::gen::entities::SHORTER_ENCODED_ENTITIES_DECODED;
-use minify_html_common::gen::entities::SHORTER_ENCODED_ENTITIES_ENCODED;
 use minify_html_common::pattern::TrieNodeMatch;
+use minify_html_common::r#gen::codepoints::ALPHANUMERIC_OR_EQUALS;
+use minify_html_common::r#gen::entities::EntityType;
+use minify_html_common::r#gen::entities::ENTITY;
+use minify_html_common::r#gen::entities::SHORTER_ENCODED_ENTITIES_DECODED;
+use minify_html_common::r#gen::entities::SHORTER_ENCODED_ENTITIES_ENCODED;
 use once_cell::sync::Lazy;
 
 static SHORTER_ENCODED_ENTITIES_ENCODED_SEARCHER: Lazy<AhoCorasick> = Lazy::new(|| {
