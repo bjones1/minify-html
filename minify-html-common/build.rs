@@ -129,10 +129,14 @@ fn gen_attrs_rs(html_data: &HtmlData) -> String {
     write!(&mut code, r#"m.insert(b"{attr_name}", ByNamespace {{"#).unwrap();
     {
       for ns in [HtmlDataNamespace::Html, HtmlDataNamespace::Svg] {
-        write!(&mut code, r#"{}:"#, match ns {
-          HtmlDataNamespace::Html => "html",
-          HtmlDataNamespace::Svg => "svg",
-        })
+        write!(
+          &mut code,
+          r#"{}:"#,
+          match ns {
+            HtmlDataNamespace::Html => "html",
+            HtmlDataNamespace::Svg => "svg",
+          }
+        )
         .unwrap();
         match namespaces.get(&ns) {
           None => write!(&mut code, "None").unwrap(),

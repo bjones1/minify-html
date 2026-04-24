@@ -134,10 +134,10 @@ fn main() {
     // Single file mode or stdin mode.
     let input_name = args
       .inputs
-      .get(0)
+      .first()
       .map(|p| p.to_string_lossy().into_owned())
       .unwrap_or_else(|| "stdin".to_string());
-    let mut src_file: Box<dyn Read> = match args.inputs.get(0) {
+    let mut src_file: Box<dyn Read> = match args.inputs.first() {
       Some(p) => Box::new(io_expect!(
         input_name,
         File::open(p),

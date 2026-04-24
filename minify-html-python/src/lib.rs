@@ -46,23 +46,26 @@ fn minify(
   remove_processing_instructions: bool,
 ) -> String {
   let code = code.into_bytes();
-  let out_code = minify_html_native(&code, &Cfg {
-    allow_noncompliant_unquoted_attribute_values,
-    allow_optimal_entities,
-    allow_removing_spaces_between_attributes,
-    keep_closing_tags,
-    keep_comments,
-    keep_html_and_head_opening_tags,
-    keep_input_type_text_attr,
-    keep_ssi_comments,
-    minify_css,
-    minify_doctype,
-    minify_js,
-    preserve_brace_template_syntax,
-    preserve_chevron_percent_template_syntax,
-    remove_bangs,
-    remove_processing_instructions,
-  });
+  let out_code = minify_html_native(
+    &code,
+    &Cfg {
+      allow_noncompliant_unquoted_attribute_values,
+      allow_optimal_entities,
+      allow_removing_spaces_between_attributes,
+      keep_closing_tags,
+      keep_comments,
+      keep_html_and_head_opening_tags,
+      keep_input_type_text_attr,
+      keep_ssi_comments,
+      minify_css,
+      minify_doctype,
+      minify_js,
+      preserve_brace_template_syntax,
+      preserve_chevron_percent_template_syntax,
+      remove_bangs,
+      remove_processing_instructions,
+    },
+  );
   String::from_utf8(out_code).unwrap()
 }
 

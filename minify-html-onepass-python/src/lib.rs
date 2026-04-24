@@ -17,10 +17,13 @@ use std::str::from_utf8_unchecked;
 )]
 fn minify(code: String, minify_js: bool, minify_css: bool) -> PyResult<String> {
   let mut code = code.into_bytes();
-  match minify_html_native(&mut code, &Cfg {
-    minify_js,
-    minify_css,
-  }) {
+  match minify_html_native(
+    &mut code,
+    &Cfg {
+      minify_js,
+      minify_css,
+    },
+  ) {
     Ok(out_len) => Ok(unsafe { from_utf8_unchecked(&code[0..out_len]).to_string() }),
     Err(Error {
       error_type,

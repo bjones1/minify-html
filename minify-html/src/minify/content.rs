@@ -47,13 +47,14 @@ fn build_optimal_chevron_replacer() -> Replacer {
 }
 
 fn build_whatwg_chevron_replacer() -> Replacer {
-  Replacer::new(AhoCorasickBuilder::new().build(["<"]).unwrap(), vec![
-    "&lt;".into(),
-  ])
+  Replacer::new(
+    AhoCorasickBuilder::new().build(["<"]).unwrap(),
+    vec!["&lt;".into()],
+  )
 }
 
-static OPTIMAL_CHEVRON_REPLACER: Lazy<Replacer> = Lazy::new(|| build_optimal_chevron_replacer());
-static WHATWG_CHEVRON_REPLACER: Lazy<Replacer> = Lazy::new(|| build_whatwg_chevron_replacer());
+static OPTIMAL_CHEVRON_REPLACER: Lazy<Replacer> = Lazy::new(build_optimal_chevron_replacer);
+static WHATWG_CHEVRON_REPLACER: Lazy<Replacer> = Lazy::new(build_whatwg_chevron_replacer);
 
 pub fn minify_content(
   cfg: &Cfg,
