@@ -3,7 +3,7 @@ name = "minify-html-bench"
 publish = false
 version = "0.0.1"
 authors = ["Wilson Lin <code@wilsonl.in>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 minify-html = { path = "../../../minify-html" }

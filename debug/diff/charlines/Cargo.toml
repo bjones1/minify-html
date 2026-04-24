@@ -2,4 +2,4 @@
 publish = false
 name = "charlines"
 version = "0.0.1"
-edition = "2018"
+edition = "2021"
