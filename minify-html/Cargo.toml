@@ -21,7 +21,10 @@ maintenance = { status = "actively-developed" }
 [dependencies]
 ahash = "0.8"
 aho-corasick = "1.1"
-lightningcss = "1.0.0-alpha.71"
+# Only the stylesheet parser/minifier is used; the default features (`bundler`,
+# `nodejs`, `sourcemap`) pull in `parcel_sourcemap`, and through it a version of
+# `rkyv` with an unpatched advisory (RUSTSEC-2026-0235).
+lightningcss = { version = "1.0.0-alpha.71", default-features = false }
 memchr = "2"
 minify-html-common = { version = "0.0.3", path = "../minify-html-common" }
 once_cell = "1.21"
